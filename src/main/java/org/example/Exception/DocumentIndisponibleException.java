@@ -1,6 +1,5 @@
 package org.example.Exception;
 
-import org.example.Exception.MediathequeException;
 
 public class DocumentIndisponibleException extends MediathequeException {
 

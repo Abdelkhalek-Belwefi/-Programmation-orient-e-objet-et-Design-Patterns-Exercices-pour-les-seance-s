@@ -33,7 +33,8 @@ public class Catalogue<T extends Document> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return elements.iterator();
+        //return elements.iterator();
+        return Collections.unmodifiableList(elements).iterator();
     }
     // lorsque en utilise cette methode avec ca
     // for(Document d : ........ dans la class

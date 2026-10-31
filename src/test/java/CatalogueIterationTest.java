@@ -35,5 +35,4 @@ class CatalogueIterationTest {
     @Test void catalogue_vide_n_a_pas_de_suivant() {
         assertFalse(new Catalogue<Livre>().iterator().hasNext());
     }
-
 }

@@ -1,10 +1,8 @@
-
 import org.example.*;
 import org.example.Exception.DocumentIndisponibleException;
 import org.example.Exception.DocumentIntrouvableException;
 import org.example.Exception.MediathequeException;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class EmpruntManagerTest {
@@ -21,6 +19,7 @@ class EmpruntManagerTest {
         Catalogue<Document> c = new Catalogue<>();
         c.ajouter(new Livre("Clean Code", 2008, "R. Martin", 464));
         EmpruntManager m = new EmpruntManager(c);
+
         m.emprunter("Clean Code");
         DocumentIndisponibleException ex = assertThrows(
                 DocumentIndisponibleException.class,
@@ -32,6 +31,7 @@ class EmpruntManagerTest {
         Catalogue<Document> c = new Catalogue<>();
         c.ajouter(new Revue("Science", 2026, 412));
         EmpruntManager m = new EmpruntManager(c);
+
         DocumentIndisponibleException ex = assertThrows(
                 DocumentIndisponibleException.class,
                 () -> m.emprunter("Science"));
@@ -43,6 +43,7 @@ class EmpruntManagerTest {
         Catalogue<Document> c = new Catalogue<>();
         c.ajouter(l);
         EmpruntManager m = new EmpruntManager(c);
+
         m.emprunter("Dune");
         assertFalse(l.estDisponible());
         l.rendre();

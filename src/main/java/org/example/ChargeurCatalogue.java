@@ -1,5 +1,3 @@
-package org.example;
-
 import org.example.Exception.CatalogueCorrompuException;
 
 import java.io.IOException;
@@ -15,7 +13,7 @@ public class ChargeurCatalogue {
             return lecteur.lines().toList();
         } catch (IOException e) {
             throw new CatalogueCorrompuException(
-                    "Echec du chargement : " + chemin, e);     // message utile + cause
+                    "Echec du chargement : " + chemin, e);       // message utile + cause
         }
     }
 }
